@@ -1,0 +1,28 @@
+<mat-form-field appearance="standard">
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Severus" #input>
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" matSort>
+  <ng-container
+    [matColumnDef]="data"
+    *ngFor="let data of objectKeys(columnHeader)"
+  >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      {{ columnHeader[data] }}
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <ng-template [ngIf]="data === 'image'" [ngIfElse]="noImage">
+        <img [src]="element[data]" />
+      </ng-template>
+      <ng-template
+        #noImage
+        >{{ (data !== 'yearOfBirth') ? element[data] : element[data] | age }}</ng-template
+      >
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="objectKeys(columnHeader)"></tr>
+  <tr mat-row *matRowDef="let row; columns: objectKeys(columnHeader)"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>

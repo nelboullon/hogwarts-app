@@ -1,0 +1,40 @@
+.hero {
+  background: url("/assets/img/hogwarts.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 256px;
+  margin: 20px 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  img {
+    display: flex;
+    align-self: center;
+    flex: 0 0 auto;
+    max-height: 212px;
+  }
+}
+.hero-content {
+  flex-direction: column;
+  color: white;
+}
+.hero-footer:first-child {
+  margin-right: 16px;
+}
+.card-slider {
+  margin: 20px 0;
+  button {
+    float: right;
+  }
+}
+
+@media (max-width: 720px ) {
+  .hero {
+    flex-direction: column-reverse;
+  }
+  .hero-footer {
+    text-align: center;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="container container-column">
+  <h1>Characters</h1>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Select a house</mat-label>
+    <mat-select [ngModel]="selectedHouse" (ngModelChange)="applyHouseFilter($event)">
+      <mat-option *ngFor="let house of houses" [value]="house">
+        {{ house }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <app-table
+    [data]="data"
+    [columnHeader]="columnHeader"
+    *ngIf="!loading"
+  ></app-table>
+</div>

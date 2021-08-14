@@ -1,0 +1,9 @@
+<div class="container container-column">
+  <h1>Students <span><button mat-flat-button color="primary" routerLink="new">Add Student</button></span></h1>
+
+  <app-table
+    [data]="data"
+    [columnHeader]="columnHeader"
+    *ngIf="!loading"
+  ></app-table>
+</div>

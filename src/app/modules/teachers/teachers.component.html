@@ -1,0 +1,9 @@
+<div class="container container-column">
+  <h1>Teachers</h1>
+
+  <app-table
+    [data]="data"
+    [columnHeader]="columnHeader"
+    *ngIf="!loading"
+  ></app-table>
+</div>

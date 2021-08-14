@@ -1,0 +1,27 @@
+<div class="container container-column">
+  <h1>Add New Student</h1>
+
+  <form [formGroup]="studentForm" (ngSubmit)=addStudent()>
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" placeholder="Name" name="name" formControlName="name"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Patronus</mat-label>
+      <input matInput type="text" placeholder="Patronus" name="patronus" formControlName="patronus"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Year Of Birth</mat-label>
+      <input matInput type="number" maxlength="4" placeholder="Year Of Birth" name="yearOfBirth" formControlName="yearOfBirth"/>
+    </mat-form-field>
+
+    <button mat-flat-button type="submit" color="primary">Guardar</button>
+
+  </form>
+
+  <h1>Students</h1>
+
+  <app-table [data]="data" [columnHeader]="columnHeader"></app-table>
+</div>

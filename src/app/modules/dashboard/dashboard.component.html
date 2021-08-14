@@ -1,0 +1,28 @@
+<div class="container container-column">
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Draco dormiens nunquam titillandus</h1>
+      <p>Welcome to Hogwarts! School of witchcraft and wizardry</p>
+      <div class="hero-footer">
+        <button mat-flat-button routerLink="students/new">Apply Now!</button>
+        <button mat-stroked-button routerLink="characters">View Characters</button>
+      </div>
+    </div>
+    <img src="assets/img/shield.png"/>
+  </div>
+  <div class="card-slider">
+    <h1>Characters</h1>
+    <app-cards-slider [data]="characters"></app-cards-slider>
+    <button mat-flat-button color="primary" [routerLink]="navigation.CHARACTERS">View All</button>
+  </div>
+  <div class="card-slider">
+    <h1>Students</h1>
+    <app-cards-slider [data]="students"></app-cards-slider>
+    <button mat-flat-button color="primary" [routerLink]="navigation.STUDENTS">View All</button>
+  </div>
+  <div class="card-slider">
+    <h1>Staff</h1>
+    <app-cards-slider [data]="staff"></app-cards-slider>
+    <button mat-flat-button color="primary" [routerLink]="navigation.TEACHERS">View All</button>
+  </div>
+</div>
